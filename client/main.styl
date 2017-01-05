@@ -1,0 +1,425 @@
+flex-version = flex
+support-for-ie = true
+vendor-prefixes = official
+
+@import 'nib'
+@import 'jeet'
+@import 'rupture'
+
+@font-face
+    font-family bbcnassim
+    font-path   '/fonts/bbcnassim'
+    font-weight normal
+    font-style  normal
+
+.test
+    transform   translateX(20%)
+body
+    font-family bbcnassim
+h1,h2,h3,h4,h5,h6,p,div,a,ul,li,ol,span,b,i,dl,strong
+    font-family bbcnassim
+.page
+    z-index 5
+    opacity 1
+    box-shadow  transparent 0 0 0 0
+    transform rotateX(0) translate3d(0,0,0)
+    transition  all 500ms ease-in-out
+    box-shadow 0 0 0 0 whtie
+.pages-stack--open
+    .page
+        opacity 0.6
+        z-index 1
+        transform rotateX(55deg) translate3d(5vw,-50vw,-25vh)
+        box-shadow 0 0 10px 0 whtie
+        border  4px white solid
+        width   80vw
+.switchLang
+    border-radius   10vw 5vh / 20vh 5vw
+    fixed bottom right
+    font-family bbcnassim
+    font-size   responsive min=18px max=30px
+    z-index 1000
+    border  none
+    box-shadow  gray 0 0 1px
+    color   #fff
+    background  #000
+    opacity 0.3
+    margin  3px
+    padding 5px
+    padding-right   15px
+    padding-left    20px
+    transition  all 150ms ease-in-out 150ms
+    &:hover
+        cursor  pointer
+        opacity 0.9
+        border-radius   5vw 20vh / 5vh 15vw
+    &:focus
+        border  none
+.warning
+    align   both
+html
+    .pages-nav
+        display flex
+        flex-wrap   wrap
+        justify-content center
+        align-items center
+        padding 0
+        margin  0
+        text-align  center
+        background  lighten(#ededed, 6%)
+        font-family bbcnassim
+        font-size   responsive min=16px max=22px
+        .pages-nav__item
+            width   33.33333%
+            padding 1em
+        .pages-nav__item--social
+            width   100%
+            opacity 0
+            transition  transform 1.2s, opacity 1.2s
+            transition-timing-function  cubic-bezier(0.2, 1, 0.3, 1)
+            transform   translate3d(0, 20px, 0)
+    &.js
+        overflow-x  hidden
+        height  auto
+        min-height  100vh
+        color   #cecece
+        background  #1d1e21
+        font-family bbcnassim
+        font-size   responsive min=16px max=22px
+        margin  0
+        body
+            height  auto
+            min-height  100vh
+            color   #cecece
+            background  #1d1e21
+            font-family bbcnassim
+            font-size   responsive
+            margin  0
+        .pages-nav
+            absolute top left
+            padding 0
+            margin  0
+            pointer-events  none
+            opacity 0
+            background  rgba(#000,0.5)
+            transition  transform 1.2s, opacity 1.2s
+            transition-timing-function  cubic-bezier(0.2, 1, 0.3, 1)
+            transform   translate3d(0,100px,0)
+            z-index 2
+            overflow    hidden
+            absolute left top
+            +below(40em)
+                display block
+                padding 0
+                margin  0
+                padding-top 65px
+                padding-bottom  0
+            &.pages-nav--open
+                pointer-events  auto
+                opacity 1
+                transform   translate3d(0, 0, 0)
+                z-index 5
+                overflow    hidden
+                absolute left top
+                width   100vw
+                height  100vh
+            .pages-nav__item
+                padding-top 0
+                padding-right   10%
+                +below(60em)
+                    width   50%
+                    padding 0
+                +below(40em)
+                    width   100vw
+                    padding-top 6px
+                    padding-bottom  6px
+                    padding-right   0
+                    padding-left    0
+                    text-align  initial
+                    text-indent 24px
+                a
+                    border-left 10px solid whitesmoke
+            .pages-nav__item--social
+                opacity 1
+                transition-delay    0.35s
+                transform   translate3d(0, 0, 0)
+                +below(40em)
+                    font-size   responsive
+            .pages-nav__item--small
+                +below(40em)
+                    display inline-block
+                    width   auto
+                    margin-right    5px
+        .page
+            position    relative
+            z-index 5
+            overflow    hidden
+            width   100vw
+            height  auto
+            min-height  100vh
+            pointer-events  auto
+            background  #1d1e21
+            box-shadow  0 -1px 10px rgba(0, 0, 0, 0.1)
+            transition  all 600ms ease-in-out
+        .pages-stack--open
+            z-index 0
+            position    relative
+            overflow hidden
+            height  100vh
+            .page
+                z-index 1
+                position    relative
+                cursor  pointer
+                overflow hidden
+.link
+    font-size   responsive 25px 40px
+    font-weight bold
+    position    relative
+    letter-spacing  0
+    text-transform  uppercase
+    text-decoration none
+    transition  all 200ms ease 200ms
+    color   whitesmoke
+    .active
+        color   darkgray
+    &:hover,&:focus
+        color   #fff
+.link--page
+    display block
+    color   #cecece
+    background-color    rgba(#000,0.6)
+    +below(60em)
+        overflow    hidden
+        white-space nowrap
+        text-overflow   elipsis
+    &:not(.link--faded)
+        &:before
+            content ''
+            absolute
+            top 100%
+            left    50%
+            width   30px
+            height  2px
+            margin  5px 0 0 -15px
+            background  #fff
+            transition  transform 0.3s
+            transform   scale3d(0, 1, 1)
+    &:hover
+        &:before
+            transform   scale3d(1, 1, 1)
+    .link--faded
+        color   #4f4f64
+        font-size   responsive
+        &:hover,&:focus
+            color   #5c5edc
+.link--social
+    font-size   responsive
+    margin-top  0
+    margin-right    0.75em
+    +below(60em)
+        margin-top  0
+        margin-right    0.1em
+.text-hidden
+    position    absolute
+    display block
+    overflow    hidden
+    width   0
+    height  0
+    color   transparent
+.pages-stack
+    z-index 100
+    pointer-events  none
+    perspective 1200px
+    perspective-origin  50% -50%
+.info
+    font-size   responsive
+    max-width   50%
+    margin-top  1.5em
+.poster
+    position absolute
+    bottom 4vh
+    left 60%
+    max-width 100%
+    max-height 80%
+.menu-button
+    z-index 1000
+    position fixed
+    top 30px
+    left 30px
+    width 30px
+    height 24px
+    padding 0
+    cursor pointer
+    border none
+    outline none
+    background transparent
+    &:before
+        transform   translate3d(0, -10px, 0) scale3d(0.8, 1, 1)
+    &:after
+        transform   translate3d(0, 10px, 0) scale3d(0.8, 1, 1)
+    &:before,&:after,span
+        background  darkgray
+        transition-property all
+    &:before,&:after
+        content ''
+        position    absolute
+        left    0
+        top     50%
+        width   100%
+        height  2px
+        pointer-events  none
+        transition  transform 0.25s
+        transform-origin    50% 50%
+    span
+        position    absolute
+        left    0
+        overflow    hidden
+        width   100%
+        height  2px
+        text-indent 200%
+        transition opacity 0.25s
+    &.menu-button--open
+        &:before,&:after,span
+            background  whitesmoke
+        &:before
+            transform   rotate3d(0, 0, 1, 45deg)
+        &:after
+            transform   rotate3d(0, 0, 1, -45deg)
+        span
+            opacity 0
+.no-js
+    .menu-button
+        display     none
+#menu
+    position fixed
+    top 0
+    left 0
+    height 40px
+    z-index 70
+    width 100%
+    padding 0
+    margin 0
+    li
+        display inline-block
+        margin 10px
+        color #000
+        background #fff
+        background rgba(255,255,255, 0.5)
+        -webkit-border-radius 10px
+        border-radius 10px
+        &.active
+            background #666
+            background rgba(0,0,0, 0.5)
+            color #fff
+        a
+            text-decoration none
+            color #000
+        &.active
+            a
+                &:hover
+                    color #000
+        &:hover
+            background rgba(#fff,0.8)
+        a, &.active
+            padding 9px 18px
+            display block
+        &.active
+            a
+                color #fff
+#menu li a,#menu li.active a
+    padding 9px 18px
+    display block
+#menu li.active a
+    color #fff
+.js-add-slide
+    fixed top right
+    margin 10px
+    font-family bbcnassim
+    font-size responsive min=15px max=20px
+    color #111
+    background yellowgreen
+    border 2px solid white
+    box-shadow 0 0 5px 0 rgba(gray,0.8)
+    border-radius 5vh 20vw / 5vw 20vh
+    z-index 1200
+    transition all 150ms ease-in-out
+    @include button()
+    &:hover
+        background greenyellow
+        cursor pointer
+        box-shadow 0 0 10px 0 black
+input.wide-text-edit
+    font-family bbcnassim
+    font-size responsive min=15px max=28px
+.sections
+    height 100vh
+    display inline-block
+    width 100vw
+    position relative
+    padding-left 20px
+    padding-right 20px
+    .img-part
+        span(.5)
+        +below(425px)
+            col(1)
+        img
+            align(v)
+            width calc(100vw / 3)
+            display inline-block
+            border-radius 5px
+            box-shadow 0 0 10px 0 whitesmoke
+    .text-part
+        align(v)
+        span(.4)
+        font-size responsive 15px 30px
+        font-range 480px 1920px
+        text-align justify
+    &:nth-child(odd)
+        background initial
+        .img-part
+            +below(736px)
+                col(1/1)
+            img
+                left calc(100vw / 15)
+        .text-part
+            +below(736px)
+                col(1/1)
+            right calc(100vw / 15)
+    &:nth-child(even)
+        background whitesmoke
+        color #1c2c3c
+        .img-part
+            img
+                right calc(100vw / 15)
+        .text-part
+            left calc(100vw / 15)
+        button
+            &.down
+                color #1c2c3c
+                box-shadow 0 0 5px 0 #1c2c3c
+    &.header-section
+        .aligner
+            align(b)
+            text-align center
+            *,*:hover,&:hover
+                cursor default
+            > h1
+                font-size responsive 35px 42px
+                font-range 980px 1920px
+            p
+                font-size responsive 18px 30px
+    button
+        &.down
+            align(b)
+            bottom 0
+            top initial
+            background none
+            box-shadow 0 0 5px 0 whitesmoke
+            color whitesmoke
+            width 50px
+            height 50px
+            cursor pointer
+    &:last-child
+        button
+            &.down
+                display none

@@ -1,0 +1,10 @@
+<template name="appLayout">
+	{{> yield  region='adminbar'}}
+	{{> yield region='pagesnav'}}
+  	<div class="pages-stack">
+      <div class="page" id="page-page">
+        {{> yield}}
+      </div>
+  	</div>
+	{{> yield region='footer'}}
+</template>

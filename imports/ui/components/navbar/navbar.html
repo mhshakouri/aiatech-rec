@@ -1,0 +1,43 @@
+<template name="myNavbar">
+	<nav class="pages-nav">
+		<div class="pages-nav__item">
+			<a class="link link--page active" href="{{pathFor route='home'}}" data-target="home">{{homeText}}</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="{{pathFor route='aboutus'}}" data-target="aboutus">{{aboutusText}}</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="{{pathFor route='products'}}" data-target="products">{{productsText}}</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="{{pathFor route='optionalFeatures'}}" data-target="optionalFeatures">{{optionalFeaturesText}}</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="{{pathFor route='partners'}}" data-target="partners">{{partnersText}}</a>
+		</div>
+		<div class="pages-nav__item">
+			<a class="link link--page" href="{{pathFor route='contactus'}}" data-target="contactus">{{contactusText}}</a>
+		</div>
+
+		<div class="pages-nav__item pages-nav__item--social">
+			<a class="link link--social link--faded" href="#">
+				<i class="fa fa-twitter"></i>
+				<span class="text-hidden">Twitter</span>
+			</a>
+			<a class="link link--social link--faded" href="#">
+				<i class="fa fa-linkedin"></i>
+				<span class="text-hidden">LinkedIn</span>
+			</a>
+			<a class="link link--social link--faded" href="#">
+				<i class="fa fa-facebook"></i>
+				<span class="text-hidden">Facebook</span>
+			</a>
+			<a class="link link--social link--faded" href="#">
+				<i class="fa fa-youtube-play"></i>
+				<span class="text-hidden">YouTube</span>
+			</a>
+		</div>
+	</nav>
+  	<button class="menu-button"><span>Menu</span></button>
+    <button type="button" class="btn btn btn-dark btn-lg switchLang">{{switchText}}</button>
+</template>

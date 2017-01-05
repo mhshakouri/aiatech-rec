@@ -1,0 +1,76 @@
+<template name="homePage">
+	<div class="wrapper-main">
+		{{> headerSection}}
+		{{> parts}}
+	</div>
+</template>
+<template name="parts">
+	{{#each parts}}
+		{{> part}}
+	{{/each}}
+</template>
+<template name="headerSection">
+	{{#with headerItem}}
+		<section class="sections header-section">
+			<div class="head-sec-container">
+				<div class="aligner">
+					<h1 class="wow fadeInDown">
+						{{#if isPersian}}{{> editableText obj=slideItem collection="HeaderSection" field="titleFa"}}
+						{{else}}{{> editableText obj=slideItem collection="HeaderSection" field="titleEn"}}{{/if}}
+					</h1>
+					<p class="wow bounceInUp">
+						{{#if isPersian}}{{> editableText obj=slideItem collection="HeaderSection" field="bottomFa" textarea=true}}
+						{{else}}{{> editableText obj=slideItem collection="HeaderSection" field="bottomEn" textarea=true}}{{/if}}
+					</p>
+				</div>
+				<button class="down wow rubberBand zoomInDown">
+					<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+				</button>
+			</div>
+		</section>
+	{{/with}}
+</template>
+<template name="part">
+	{{#if currentUser}}
+		<section class="sections home-section">
+			<div class="home-sec-container">
+				<div class="text-part wow fadeIn bounceIn" data-wow-duration="2s">
+					<h1>{{> editableText obj=slideItem collection="HomeParts" field="titleFa"}}</h1>
+					<h1>{{> editableText obj=slideItem collection="HomeParts" field="titleEn"}}</h1>
+					<p>{{> editableText obj=slideItem collection="HomeParts" field="bodyFa" textarea=true}}</p>
+					<p>{{> editableText obj=slideItem collection="HomeParts" field="bodyEn" textarea=true}}</p>
+					<hr/>
+					<span>تصویر:</span>
+					{{> editableText obj=slideItem collection="HomeParts" field="imageFile"}}
+				</div>
+				<div class="img-part wow fadeIn bounceIn" data-wow-duration="2s">
+					<img class="bgimage" src="{{imageFile}}"/>
+				</div>
+				<button class="down wow rubberBand zoomInDown">
+					<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+				</button>
+			</div>
+		</section>
+	{{else}}
+		<section class="sections home-section">
+			<div class="home-sec-container">
+				<div class="text-part wow fadeIn bounceIn" data-wow-duration="2s">
+					<h1>
+						{{#if isPersian}}{{titleFa}}
+						{{else}}{{titleEn}}{{/if}}
+					</h1>
+					<p>
+						{{#if isPersian}}{{bodyFa}}
+						{{else}}{{bodyEn}}{{/if}}
+					</p>
+				</div>
+				<div class="img-part wow fadeIn bounceIn" data-wow-duration="2s">
+					<img class="bgimage" src="{{imageFile}}"/>
+				</div>
+				<button class="down wow rubberBand zoomInDown">
+					<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+				</button>
+			</div>
+		</section>
+	{{/if}}
+</template>

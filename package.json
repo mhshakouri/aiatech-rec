@@ -1,0 +1,48 @@
+{
+    "name": "aiatech",
+    "description": "Custom node version running on openshift",
+    "version": "1.0.0",
+    "engines": {
+        "node": "0.10.43",
+        "npm": "2.14.22"
+    },
+    "dependencies": {
+        "meteor-node-stubs": "~0.2.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^6.3.6",
+        "postcss": "^5.0.21",
+        "postcss-rtlcss-combined": "0.0.0",
+        "postcss-safe-parser": "^1.0.7",
+        "rucksack-css": "^0.8.6"
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {
+                "browsers": [
+                    "last 4 versions"
+                ]
+            },
+            "rucksack-css": {},
+            "postcss-rtlcss-combined": {}
+        },
+        "parser": "postcss-safe-parser",
+        "excludedPackages": [
+            "twbs:bootstrap",
+            "aldeed:autoform",
+            "fortawesome:fontawesome",
+            "natestrauser:connection-banner",
+            "natestrauser:animate-css",
+            "babrahams:editable-text",
+            "useraccounts:unstyled",
+            "froala:editor",
+            "sacha:spin",
+            "swiper:swiper",
+            "timmyg:wow",
+            "danappelxx:hover.css",
+            "useraccounts:materialize",
+            "materialize:materialize"
+        ]
+    },
+    "private": true
+}
