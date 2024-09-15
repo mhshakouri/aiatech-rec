@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "autoprefixer": "^6.3.6",
-        "postcss": "^5.0.21",
+        "postcss": "^8.4.47",
         "postcss-rtlcss-combined": "0.0.0",
         "postcss-safe-parser": "^1.0.7",
         "rucksack-css": "^0.8.6"
